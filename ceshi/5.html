@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Table</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 引入jQuery库 -->
+    <style>
+        table {
+            border-collapse: collapse; /* 合并边框 */
+        }
+        
+        th, td {
+            padding: 5px; /* 设置单元格间距 */
+            text-align: left; /* 左对齐 */
+            border: 1px solid black; /* 添加边框样式 */
+        }
+    </style>
+</head>
+<body>
+    <h2>Table Data</h2>
+    
+    <div id="tableContainer"></div> <!-- 用于动态生成表格的容器 -->
+    
+    <script>
+        $(document).ready(function() { // 页面加载完成时执行
+            $.ajax({
+                url: 'myTable.xlsx', // 指定表格文件路径
+                dataType: "text",
+                success: function (response) {
+                    var lines = response.split('\n'); // 按换行符切分每一行
+                    var headerRow = lines[0].split(','); // 获取第一行作为表头
+                    
+                    $('#tableContainer').append('<table><thead></thead><tbody></tbody></table>'); // 创建表格结构
+                    
+                    for (var i = 0; i < headerRow.length; i++) {
+                        $('thead').append('<th>' + headerRow[i] + '</th>'); // 添加表头列
+                    }
+                    
+                    for (var j = 1; j < lines.length - 1; j++) { // 从第二行开始处理数据行
+                        var rowData = lines[j].split(',');
+                        
+                        if (rowData.length > 0 && !isNaN(parseInt(rowData[0], 10))) { // 判断当前行是否有效
+                            $('tbody').append('<tr></tr>'); // 新增一行
+                            
+                            for (var k = 0; k < rowData.length; k++) {
+                                $('tbody tr:last').append('<td>' + rowData[k] + '</td>'); // 添加数据列
+                            }
+                        }
+                    }
+                },
+                error: function () {
+                    console.log("Error loading file");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
