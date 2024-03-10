@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过年啦！</title>
+    <link rel="stylesheet" href="./lantern.css">
+<style>
+.big {
+   width: 700px;
+   height: 100%;
+   border: 0px solid #ff0000;
+   box-sizing: border-box;
+   position: relative;
+   top: 50px;
+}
+.big .small {
+   width: 680px;
+   height: 90%;
+   border: 0px solid #000;
+   text-align: center;
+   line-height: 100px;
+   margin: 10px;
+  line-height: 2.5; /* 行高是字体大小的1.5倍 */
+  text-align: justify;
+  text-indent: 2em; /* 2em 是两个空格的大小，根据字体大小调整 */
+}
+.ss{
+    color: red;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px #656B79;
+
+}
+
+</style>
+</head>
+<body>
+    <div class="content">
+        <div class="lantern-box">
+            <div class="lantern-line"></div>
+            <div class="lantern-body">
+                <!-- 灯笼中间的线条 -->
+                <div class="lantern-circle">
+                    <div class="lantern-rect">
+                        <!-- 灯笼中间的文字内容 -->
+                        <div class="lantern-text">龙年吉运</div>
+                    </div>
+                </div>
+                <!-- 灯笼穗 -->
+                <div class="lantern-tassel"></div>
+            </div>
+        </div><div class="big"><b><h2 class="ss">2024憧憬寄语</h2></b> <div class="small">
+亲爱的朋友，
+
+随着2024年春节的结束，我们又迎来了新的一年，充满了无限的希望和期待。此刻，我想向你表达我对未来的美好祝愿和鼓励。
+
+愿你在新的一年里，无论是在工作上还是生活中，都能勇往直前，克服一切困难。你的努力将会得到回报，你的坚持将会看到曙光。请相信，只要你保持积极的心态，未来一定属于你。
+
+愿你在新的一年里，收获满满的幸福和喜悦。愿你的家庭和睦，朋友众多，生活充满欢声笑语。无论遇到什么挑战，都希望你能保持乐观的心态，相信一切都会变得更好。
+
+愿你在新的一年里，实现自己的梦想和目标。无论你追求的是什么，都希望你能坚持不懈，永不放弃。请记住，成功需要时间和努力，只要你不停止前进的步伐，就一定能够到达理想的彼岸。
+
+愿你在新的一年里，继续学习成长，不断拓宽自己的视野和知识面。请相信，知识就是力量，它能够帮助你更好地应对未来的挑战和机遇。
+
+最后，我想对你说，无论未来有多少困难和挑战，都请你相信自己，相信你的能力和潜力。请记住，你是最棒的，你一定能够创造属于自己的辉煌人生。
+
+祝愿大家在新的一年里，万事如意，心想事成，幸福安康！
+
+祝福你，我的朋友！
+
+</div> </div>
+        <div class="lantern-box">
+            <div class="lantern-line"></div>
+            <div class="lantern-body">
+                <!-- 灯笼中间的线条 -->
+                <div class="lantern-circle">
+                    <div class="lantern-rect">
+                        <!-- 灯笼中间的文字内容 -->
+                        <div class="lantern-text">心想事成</div>
+                    </div>
+                </div>
+                <!-- 灯笼穗 -->
+                <div class="lantern-tassel"></div>
+            </div>
+     </div>
+    </div>
+
+    <audio id="bgMusic" src="m.mp3" autoplay></audio>
+    <iframe allow="autoplay" style="display:none" src="m.mp3"></iframe>
+
+    <script>
+        document.body.addEventListener('mousedown', function(){
+            var myAuto = document.getElementById('bgMusic');
+            myAuto.play();
+        }, false);
+    </script>
+</body>
+</html>
